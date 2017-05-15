@@ -26,7 +26,7 @@ namespace Dapper.Tests.Performance
 		}
 
 		[Benchmark(Description = "Query (generic)")]
-		public dynamic QueryGeneric()
+		public Post QueryGeneric()
 		{
 			Step();
 			var result = _modelGeneric.Query("select * from Posts where Id = @0", _connection, i).First();
