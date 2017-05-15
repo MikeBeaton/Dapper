@@ -13,8 +13,8 @@ namespace Dapper.Tests.Performance
         public void Setup()
         {
             BaseSetup();
-			_modelDynamic = new MightyORM(ConnectionString);
-			_modelGeneric = new MightyORM<Post>(ConnectionString);
+			_modelDynamic = new MightyORM(ConnectionString + ";ProviderName=System.Data.SqlClient");
+			_modelGeneric = new MightyORM<Post>(ConnectionString + ";ProviderName=System.Data.SqlClient");
 		}
 
 		[Benchmark(Description = "Query (dynamic)")]
